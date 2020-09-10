@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Converter Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="wrapper-center">
+      <h1>Converter Online</h1>
+      <div class="text-block">
+        <textarea rows="8" placeholder="Your text" id="userText"></textarea>
+      </div>
+
+      <div class="buttons">
+        <button onclick="toUpper()">UPPER CASE</button>
+        <button onclick="toLower()">LOWER CASE</button>
+        <button onclick="copyText()">Copy</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var toUpper = function(){
+      var userText = document.getElementById('userText').value;
+      userText = document.getElementById('userText').value = userText.toUpperCase()
+    }
+
+    var toLower = function(){
+      var userText = document.getElementById('userText').value;
+      userText = document.getElementById('userText').value = userText.toLowerCase()
+    }
+
+    function copyText() {
+      var copyText = document.getElementById("userText");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+    }
+  </script>
+</body>
+</html>
